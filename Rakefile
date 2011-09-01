@@ -18,7 +18,7 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/syborg/mme_tools"
   gem.license = "MIT"
   gem.summary = %Q{various homeless methods}
-  gem.description = %Q{generic classes and methods that could be used everywhere}
+  gem.description = %Q{generic classes and methods that may be used everywhere}
   gem.email = "xaxaupua@gmail.com"
   gem.authors = ["Marcel Massana"]
   # dependencies defined in Gemfile
