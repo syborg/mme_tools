@@ -22,6 +22,19 @@ module MMETools
       res
     end
 
+    # Interessant iterador que classifica un enumerable
+    # (The Ruby Way , Ed. 2 - p 289)
+    def classify(enumrbl, &block)
+      hash = {}
+      enumrbl.each do |el|
+        res = block.call el # tb res=yield(el)
+        hash[res] = [] unless hash.has_key? res
+        hash[res] << el
+      end
+      hash
+    end
+
+    # FIXME I on't know really why I designed this ... possibly drop candidate
     # returns an array containing from +first+ to +last+
     # options is a hash that can contain:
     # +:comp=>eq_method+ is a a symbol with the name of the method that sent to
@@ -29,8 +42,8 @@ module MMETools
     #     supplied +:==+ assumed.
     # +:max=>max_num+ is the maximum size of the returned array. If not supplied
     #     false assumed (no limit)
-    # +:last_included?=>true or false+ tells if +last+ shoul be included. If not
-    #     included +true+ assumed
+    # +:last_included?=>true or false+ tells if +last+ should be included.
+    #     If not included +true+ assumed
     # The code block is not optional: it is passed an element and should return
     # the next.
     def from_to(first, last, options=nil)

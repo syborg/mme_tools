@@ -1,6 +1,8 @@
 # mme_tools/concurrent
 # Marcel Massana 1-Sep-2011
 
+require 'thread'
+
 module MMETools
 
   # Concurrent classes (some method converted to concurrent versions)

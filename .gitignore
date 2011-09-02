@@ -49,3 +49,6 @@ pkg
 
 # For netbeans
 nbproject
+
+# dirty tests
+examples/pr_*
