@@ -3,9 +3,8 @@ require 'mme_tools'
 
 class TC_Enumerable < Test::Unit::TestCase
 
-  include MMETools::Enumerable
-
   def setup
+    extend MMETools::Enumerable
     @a=(1..12).to_a
     @b=("A".."M").to_a
     @c=%w{tantmateix adhuc nogensmenys urgell pocassolta carrincló bajanada casundena Massalcoreig}
