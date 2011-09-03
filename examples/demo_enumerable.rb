@@ -25,7 +25,7 @@ p a3=compose(en2.dup, en3.dup).flatten
 # => ["a", :elem1, "1", "b", :elem2, "2", "c", :elem3, "3", "d", nil, "e", nil]
 
 # classify
-a1 = %w{ un dos tres quatre cinc sis set vuit nou deu }
+a1=%w{tantmateix adhuc nogensmenys urgell pocassolta carrincló bajanada casundena Massalcoreig}
 a2 = <<EOF
 petita petunia pestilent
 calikenyo vigoros
@@ -47,3 +47,6 @@ p odd_values en2
 # => [2, 4]
 p even_values en2
 # => [1, 3]
+
+# compose what has been decomposed
+p (compose even_values(en2), odd_values(en2)).flatten.compact
