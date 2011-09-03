@@ -43,3 +43,7 @@ p odd_values en1
 # => [2, 4]
 p even_values en1
 # => [1, 3]
+p odd_values en2
+# => [2, 4]
+p even_values en2
+# => [1, 3]
