@@ -5,9 +5,9 @@
 
 Gem::Specification.new do |s|
   s.name = "mme_tools"
-  s.version = "0.0.0.pre2"
+  s.version = "0.0.1"
 
-  s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
+  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Marcel Massana"]
   s.date = "2011-09-03"
   s.description = "generic classes and methods that may be used everywhere"
@@ -25,12 +25,16 @@ Gem::Specification.new do |s|
     "Rakefile",
     "examples/demo_enumerable.rb",
     "examples/demo_print_debug.rb",
+    "examples/demo_webparse.rb",
     "lib/mme_tools.rb",
     "lib/mme_tools/concurrent.rb",
     "lib/mme_tools/debug.rb",
     "lib/mme_tools/enumerable.rb",
     "lib/mme_tools/version.rb",
     "lib/mme_tools/webparse.rb",
+    "mme_tools.gemspec",
+    "test/tc_enumerable.rb",
+    "test/tc_webparse.rb",
     "test/test_mme_tools.rb"
   ]
   s.homepage = "http://github.com/syborg/mme_tools"
