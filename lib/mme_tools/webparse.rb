@@ -13,6 +13,8 @@ module MMETools
   # methods for processing strings while parsing webpages
   module Webparse
 
+    extend self # elegant truc per a que tots els metodes siguin class/module methods 
+    
     # torna una uri treient-hi les invocacions javascript si n'hi ha. Per exemple
     #   "javascript:openDoc('/gisa/documentos/cartes/PT.DOC')" -> "/gisa/documentos/cartes/PT.DOC"
     def clear_uri uri
