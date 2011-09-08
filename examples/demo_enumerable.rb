@@ -1,6 +1,7 @@
 # some tiny demos
 # Marcel Massana 2-Sep-2011
 
+require 'rubygems'
 require 'mme_tools/enumerable'
 include MMETools::Enumerable
 

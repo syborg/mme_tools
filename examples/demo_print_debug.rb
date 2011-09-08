@@ -5,6 +5,7 @@
 # calling stack upto the number of levels required) and pretty prints the
 # following args.
 
+require 'rubygems'
 require 'mme_tools/debug'
 
 class A

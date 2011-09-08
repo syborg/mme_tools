@@ -1,6 +1,7 @@
 # Some dirty tests on MMETools::Webparse
 # Marcel Massana 3-Sep-2011
 
+require 'rubygems'
 require 'mme_tools/webparse'
 
 module WP
