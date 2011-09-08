@@ -4,9 +4,7 @@
 require 'rubygems'
 require 'mme_tools/webparse'
 
-module WP
-  extend MMETools::Webparse
-end
+WP = MMETools::Webparse
 
 a="ÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝàáâãäåçèéêëìíîïñòóôõöøùúûüý"
 b="AAAAAACEEEEIIIIDNOOOOOxOUUUUYaaaaaaceeeeiiiinoooooouuuuy"
