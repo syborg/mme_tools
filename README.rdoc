@@ -1,19 +1,43 @@
 = mme_tools
 
-Description goes here.
+Sparse homeless methods that haven't found their home, ... at present
 
-== Contributing to mme_tools
- 
-* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
-* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
-* Fork the project
-* Start a feature/bugfix branch
-* Commit and push until you are happy with your contribution
-* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
-* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+== Usage
+
+There are some 'specialized' modules:
+
+* MMETools::Concurrent. Some thread save methods thread
+* MMETools::Debug. A convenient print_debug method
+* MMETools::Enumerable. Some methods that I use with arrays
+* MMETools::Webparse. Methods to cleanup dirty strings from websites
+
+To use any of them you can ...
+
+    require 'rubygems'
+    require 'mme_tools/enumerable'
+
+or all of them
+
+    require 'rubygems'
+    require 'mmetools'
+
+A soon as modules are required, you can use its methods directly as class
+methods like:
+
+    MMETools::Enumerable.compose(%w(a b), %w(A B), (1..2).to_a)
+    # => [["a", "A", 1], ["b", "B", 2]]
+
+or include them in your classes to access methods through instances
+
+    class MyClass
+    include MMETools::Enumerable
+    end
+
+    x=MyClass.new
+    x.compose(%w(a b), %w(A B), (1..2).to_a)
+    # => [["a", "A", 1], ["b", "B", 2]]
 
 == Copyright
 
 Copyright (c) 2011 Marcel Massana. See LICENSE.txt for
 further details.
-

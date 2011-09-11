@@ -8,6 +8,8 @@ module MMETools
   # Concurrent classes (some method converted to concurrent versions)
   module Concurrent
 
+    extend self
+
     class ConcurrentHash < Hash
 
       def initialize

@@ -6,6 +6,8 @@ module MMETools
   # Methods for Enumerables (Arrays and other each-equiped stuff)
   module Enumerable
 
+    extend self
+
     # torna un array on cada element es una tupla formada per
     # un element de cada enumerable. Si se li passa un bloc
     # se li passa al bloc cada tupla i el resultat del bloc
@@ -34,7 +36,7 @@ module MMETools
       hash
     end
 
-    # FIXME I on't know really why I designed this ... possibly drop candidate
+    # FIXME I don't know really why I designed this ... possibly drop candidate
     # returns an array containing from +first+ to +last+
     # options is a hash that can contain:
     # +:comp=>eq_method+ is a a symbol with the name of the method that sent to

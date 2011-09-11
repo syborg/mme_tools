@@ -1,7 +1,7 @@
 # mme_tools
 # Marcel Massana 1-Sep-2011
 
-require 'rubygems'
+#require 'rubygems'
 require 'mme_tools/enumerable'
 require 'mme_tools/webparse'
 require 'mme_tools/debug'

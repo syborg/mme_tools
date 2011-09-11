@@ -9,6 +9,8 @@ module MMETools
   # tiny methods for debugging
   module Debug
 
+    extend self
+
     # outputs a debug message and details of each one of the +vars+ if included.
     # +stck_lvls+ is the number of stack levels to be showed
     # +vars+ is a list of vars to be pretty printed. It is convenient to
