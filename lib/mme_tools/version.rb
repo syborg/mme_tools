@@ -6,7 +6,7 @@ module MMETools
 
     MAJOR = 0
     MINOR = 0
-    PATCH = 2
+    PATCH = 3
     BUILD = nil  # use nil if not used
 	
     STRING = [MAJOR, MINOR, PATCH, BUILD].compact.join(".")

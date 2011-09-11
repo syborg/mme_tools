@@ -7,6 +7,7 @@ Sparse homeless methods that haven't found their home, ... at present
 There are some 'specialized' modules:
 
 * MMETools::Concurrent. Some thread save methods thread
+* MMETools::Config. A class that eases configure apps
 * MMETools::Debug. A convenient print_debug method
 * MMETools::Enumerable. Some methods that I use with arrays
 * MMETools::Webparse. Methods to cleanup dirty strings from websites

@@ -1,0 +1,13 @@
+--- 
+:also: 
+- :a: A
+  :b: B
+- Hi There
+:surname: Peterson
+:any_name_u_want: anyname
+:name: Joana
+:contact: !ruby/object:MMETools::Config 
+  data: 
+    :emails: 
+    - jo@ana.com
+    - j_ana@gmail.com

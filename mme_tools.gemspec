@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{mme_tools}
-  s.version = "0.0.2"
+  s.version = "0.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Marcel Massana"]
-  s.date = %q{2011-09-11}
+  s.date = %q{2011-09-12}
   s.description = %q{generic classes and methods that may be used everywhere}
   s.email = %q{xaxaupua@gmail.com}
   s.extra_rdoc_files = [
