@@ -52,3 +52,5 @@ nbproject
 
 # dirty tests
 examples/pr_*
+
+tmp/*

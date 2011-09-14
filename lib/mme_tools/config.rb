@@ -40,7 +40,7 @@ module MMETools
 
     def dump(filename)
       File.open(filename,'w') do |f|
-        YAML.dump(@data,f)
+        YAML.dump(self,f)
       end
     end
 

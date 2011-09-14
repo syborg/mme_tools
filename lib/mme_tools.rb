@@ -7,6 +7,7 @@ require 'mme_tools/webparse'
 require 'mme_tools/debug'
 require 'mme_tools/concurrent'
 require 'mme_tools/config'
+require 'mme_tools/named_args'
 
 #TODO translate all documentation to english
 

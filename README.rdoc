@@ -10,6 +10,7 @@ There are some 'specialized' modules:
 * MMETools::Config. A class that eases configure apps
 * MMETools::Debug. A convenient print_debug method
 * MMETools::Enumerable. Some methods that I use with arrays
+* MMETools::ArgsProc. Methods to process args for methods and initializers.
 * MMETools::Webparse. Methods to cleanup dirty strings from websites
 
 To use any of them you can ...
