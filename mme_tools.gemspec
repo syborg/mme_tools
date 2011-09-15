@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Marcel Massana"]
-  s.date = %q{2011-09-12}
+  s.date = %q{2011-09-15}
   s.description = %q{generic classes and methods that may be used everywhere}
   s.email = %q{xaxaupua@gmail.com}
   s.extra_rdoc_files = [
@@ -23,11 +23,16 @@ Gem::Specification.new do |s|
     "LICENSE.txt",
     "README.rdoc",
     "Rakefile",
+    "examples/demo_args_proc.rb",
+    "examples/demo_config.rb",
     "examples/demo_enumerable.rb",
     "examples/demo_print_debug.rb",
     "examples/demo_webparse.rb",
+    "examples/tmp/config.yml",
     "lib/mme_tools.rb",
+    "lib/mme_tools/args_proc.rb",
     "lib/mme_tools/concurrent.rb",
+    "lib/mme_tools/config.rb",
     "lib/mme_tools/debug.rb",
     "lib/mme_tools/enumerable.rb",
     "lib/mme_tools/version.rb",
