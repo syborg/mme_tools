@@ -1,4 +1,4 @@
 require 'test/unit'
 require 'mme_tools'
 
-require *(Dir[File.join("**","tc_*")])  # any file beginning in 'tc_' here or in subdirs
+Dir[File.join("**","tc_*")].each {|f| require f}  # any file beginning in 'tc_' here or in subdirs
