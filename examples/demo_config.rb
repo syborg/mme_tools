@@ -13,13 +13,13 @@ config1.name = "Joana"
 config1.surname = "Peterson"
 config1.any_name_u_want = "anyname"
 config1.contact = {:emails => ['jo@ana.com', 'j_ana@gmail.com']}
-config1.also = [{:a=>'A', :'b'=>'B'},'Hi There']
+config1.also = ['Hi There']
 
 
 #
 config1.dump config_file
 
-pp config1
+pp config1.contact.emails
 
 config2 = MMETools::Config.new
 config2.load config_file
@@ -28,3 +28,18 @@ config2.load config_file
 # simple syntax
 pp config2.contact.emails
 pp config2.also
+
+# Instantiating a config directly by loading
+config3 = MMETools::Config.load config_file
+pp config2.contact.emails
+pp config2.also
+
+
+config4 = MMETools::Config.new do |c|
+  c.param1 = "Hola"
+  c.param2 = %w[a b c]
+  c.param3 = {:a => {:A=> 'jorl'}, :b => 2}
+end
+
+pp config4
+pp config4.to_hash

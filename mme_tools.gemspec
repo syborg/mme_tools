@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Marcel Massana"]
-  s.date = %q{2011-09-15}
+  s.date = %q{2011-09-17}
   s.description = %q{generic classes and methods that may be used everywhere}
   s.email = %q{xaxaupua@gmail.com}
   s.extra_rdoc_files = [
@@ -28,7 +28,6 @@ Gem::Specification.new do |s|
     "examples/demo_enumerable.rb",
     "examples/demo_print_debug.rb",
     "examples/demo_webparse.rb",
-    "examples/tmp/config.yml",
     "lib/mme_tools.rb",
     "lib/mme_tools/args_proc.rb",
     "lib/mme_tools/concurrent.rb",
@@ -53,18 +52,24 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<unicode>, [">= 0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.6.4"])
       s.add_development_dependency(%q<rcov>, [">= 0"])
+      s.add_development_dependency(%q<rr>, [">= 0"])
     else
+      s.add_dependency(%q<unicode>, [">= 0"])
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
       s.add_dependency(%q<rcov>, [">= 0"])
+      s.add_dependency(%q<rr>, [">= 0"])
     end
   else
+    s.add_dependency(%q<unicode>, [">= 0"])
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
     s.add_dependency(%q<rcov>, [">= 0"])
+    s.add_dependency(%q<rr>, [">= 0"])
   end
 end
 
