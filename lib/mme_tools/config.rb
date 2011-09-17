@@ -8,6 +8,7 @@ require 'yaml'
 
 module MMETools
 
+  #TODO try to overcome name conflicts with existent merhods (like dump) and with Upcase keys
   #TODO mirar un gem que es diu construct. Fa el mateix. Igual es pot canviar
 
   # Helps keeping configuration parameters, i.e. of any application, grouped
