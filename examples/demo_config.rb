@@ -30,7 +30,7 @@ pp config2.contact.emails
 pp config2.also
 
 # Instantiating a config directly by loading
-config3 = MMETools::Config.load "prova"
+config3 = MMETools::Config.load config_file
 pp config2.contact.emails
 pp config2.also
 
@@ -43,3 +43,9 @@ end
 
 pp config4
 pp config4.to_hash
+
+# Merging configs
+
+config4.update! [config1]
+
+pp config4

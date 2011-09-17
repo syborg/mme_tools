@@ -44,18 +44,30 @@ class TC_Config < Test::Unit::TestCase
     assert_nil @c.param_that_doesnt_exist
   end
 
-  def test_update_existent_parameter
+  def test_update_existent_parameter_with_hash
     @c.update! :param2 => 2
     assert_equal 2, @c.param2
   end
 
-  def test_update_new_parameter
+  def test_update_new_parameter_with_hash
     @c.update! :param4 => 4
     assert_equal 4, @c.param4
   end
 
-  def test_to_hash
-    assert_equal @hsh, @c.to_hash
+  def test_update_existent_parameter_with_another_config
+    another = MMETools::Config.new :param2 => 2
+    @c.update! another
+    assert_equal 2, @c.param2
+  end
+
+  def test_update_new_parameter_with_another_config
+    another = MMETools::Config.new :param4 => 4
+    @c.update! another
+    assert_equal 4, @c.param4
+  end
+
+  def test_update_argument_error
+    assert_raise(ArgumentError) {@c.update!([1,2])}
   end
 
   def test_create_with_block

@@ -47,10 +47,16 @@ module MMETools
       yield(self) if block_given?
     end
 
-    # updates kept configuration with +data+ Hash. If a key already exists
-    # the corresponding value updates.
+    # updates kept configuration with +data+ (Hash or another MMETools::Config
+    # object. If a key already exists the corresponding value updates.
     def update!(data)
       # can't be used @data.merge because []= is differently defined (below)
+      case data
+      when Hash
+      when MMETools::Config
+        data = data.to_hash
+      else raise ArgumentError, "Only Hash objects or MMETools::Config objects admited"
+      end
       data.each do |key, value|
         self[key] = value
       end
