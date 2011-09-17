@@ -1,7 +1,7 @@
 # demo de utilitzacio de MMETools::Config
 # Marcel Massana 11-Sep-2011
 
-require 'mme_tools/config'
+require '../lib/mme_tools/config'
 require 'pp'
 
 config_file = File.expand_path('tmp/config.yml',File.dirname(__FILE__))
@@ -26,13 +26,15 @@ config2.load config_file
 
 # when accessing an already made config u can access hashes to end level with a
 # simple syntax
+pp config2.class
 pp config2.contact.emails
 pp config2.also
 
 # Instantiating a config directly by loading
 config3 = MMETools::Config.load config_file
-pp config2.contact.emails
-pp config2.also
+pp config3.class
+pp config3.contact.emails
+pp config3.also
 
 
 config4 = MMETools::Config.new do |c|
@@ -46,6 +48,6 @@ pp config4.to_hash
 
 # Merging configs
 
-config4.update! [config1]
+config4.update! config1
 
 pp config4

@@ -91,7 +91,9 @@ module MMETools
     # creates a MMETools::Config object form an already dumped one.
     # +filename+ is the name of the file containing configuration.
     def self.load(filename)
-      new.load filename
+      obj = self.new
+      obj.load filename
+      obj
     end
 
     # saves configuration into a _yaml_ file named +filename+
