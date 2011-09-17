@@ -30,7 +30,7 @@ pp config2.contact.emails
 pp config2.also
 
 # Instantiating a config directly by loading
-config3 = MMETools::Config.load config_file
+config3 = MMETools::Config.load "prova"
 pp config2.contact.emails
 pp config2.also
 

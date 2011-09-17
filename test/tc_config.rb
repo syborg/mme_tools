@@ -7,7 +7,7 @@ require 'rr'
 
 class TC_Config < Test::Unit::TestCase
 
-  include RR::Adapters::TestUnit
+  include RR::Adapters::TestUnit  # rr's suite mock/stub adapters
 
   def setup
     @hsh = {
@@ -40,6 +40,20 @@ class TC_Config < Test::Unit::TestCase
     assert_equal 'END', @c.param3.subparam2.subsubparam1
   end
 
+  def test_inexistent_parameter
+    assert_nil @c.param_that_doesnt_exist
+  end
+
+  def test_update_existent_parameter
+    @c.update! :param2 => 2
+    assert_equal 2, @c.param2
+  end
+
+  def test_update_new_parameter
+    @c.update! :param4 => 4
+    assert_equal 4, @c.param4
+  end
+
   def test_to_hash
     assert_equal @hsh, @c.to_hash
   end
@@ -62,6 +76,10 @@ class TC_Config < Test::Unit::TestCase
     stub(YAML).load_file('dummy_config') { @hsh.dup }
     cfg = MMETools::Config.load 'dummy_config'
     assert_equal @hsh, cfg.to_hash
+  end
+
+  def test_load_file_error
+    assert_raise(Errno::ENOENT) {@c.load("I_dont_exist.yml")}
   end
 
 end
