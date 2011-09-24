@@ -15,3 +15,8 @@ puts a.chars.map.class, b.split('').class
 
 p WP.clear_string dirty_text # => "Geología, Prevenció, Caçador, Sàtrapa"
 p WP.clear_string dirty_text, :encoding => 'ASCII'
+p WP.asciify dirty_text
+
+# datify
+
+puts WP.datify("1/2/10")

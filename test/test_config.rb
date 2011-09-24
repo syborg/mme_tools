@@ -21,7 +21,6 @@ class TC_Config < Test::Unit::TestCase
       }
     }
     @c = MMETools::Config.new @hsh
-
   end
 
   def test_first_level_parameter_basic

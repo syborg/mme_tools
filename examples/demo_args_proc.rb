@@ -17,10 +17,10 @@ class Dummy
     }
     assert_valid_keys options, default_opts
     options.each do |k|
-      puts k
+      p k
     end
   end
 
 end
 
-d=Dummy.new 1,2,:name => 'Bartolo', :j=>2, :i=>3
+d=Dummy.new 1,2,:name => 'Bartolo', :email => 'j'
