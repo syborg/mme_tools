@@ -74,8 +74,7 @@ module MMETools
     cleared_str.split(" ").map {|s| s[0..1].capitalize}.join
 	end
 	
-	# (tries to) Extracts and returns a DateTime from a string 
-  # TODO s'ha de millorar aixo i anar afegint possibilitats
+	# Extracts and returns the first provable DateTime from a string
 	def datify(str)
     pttrn = /(\d+)[\/-](\d+)[\/-](\d+)(\W+(\d+)\:(\d+))?/
     day, month, year, dummy, hour, min = str.match(pttrn).captures.map {|d| d ? d.to_i : 0 }
