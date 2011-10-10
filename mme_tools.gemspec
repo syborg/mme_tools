@@ -4,14 +4,14 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{mme_tools}
-  s.version = "0.0.3"
+  s.name = "mme_tools"
+  s.version = "0.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Marcel Massana"]
-  s.date = %q{2011-09-17}
-  s.description = %q{generic classes and methods that may be used everywhere}
-  s.email = %q{xaxaupua@gmail.com}
+  s.date = "2011-10-10"
+  s.description = "generic classes and methods that may be used everywhere"
+  s.email = "xaxaupua@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.rdoc"
@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
     "examples/demo_enumerable.rb",
     "examples/demo_print_debug.rb",
     "examples/demo_webparse.rb",
+    "examples/tmp/config.yml",
     "lib/mme_tools.rb",
     "lib/mme_tools/args_proc.rb",
     "lib/mme_tools/concurrent.rb",
@@ -37,21 +38,20 @@ Gem::Specification.new do |s|
     "lib/mme_tools/version.rb",
     "lib/mme_tools/webparse.rb",
     "mme_tools.gemspec",
-    "test/tc_enumerable.rb",
-    "test/tc_webparse.rb",
-    "test/test_mme_tools.rb"
+    "test/test_config.rb",
+    "test/test_enumerable.rb",
+    "test/test_webparse.rb"
   ]
-  s.homepage = %q{http://github.com/syborg/mme_tools}
+  s.homepage = "http://github.com/syborg/mme_tools"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.6}
-  s.summary = %q{various homeless methods}
+  s.rubygems_version = "1.8.10"
+  s.summary = "various homeless methods"
 
   if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<unicode>, [">= 0"])
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.6.4"])
