@@ -39,53 +39,53 @@ module MMETools
       str=str.chars.map { |c| (c[0] <= 127) ? c : translation_hash[c] }.join if options[:encoding]=='ASCII'
       str.gsub(/[\s\302\240]+/mu," ").strip # el caracter UTF8 "\302\240" correspon al &nbsp; de HTML
     end
-## La versio original basada en Iconv no funciona en algunes circumstancies
-#    def orig_clear_string(str, options={:encoding=>'UTF8'})
-#      str=Iconv.conv('ASCII//TRANSLIT//IGNORE', 'UTF8', str) if options[:encoding]=='ASCII'
-#      str.gsub(/[\s\302\240]+/mu," ").strip # el caracter UTF8 "\302\240" correspon al &nbsp; de HTML
-#    end
+    ## La versio original basada en Iconv no funciona en algunes circumstancies
+    #    def orig_clear_string(str, options={:encoding=>'UTF8'})
+    #      str=Iconv.conv('ASCII//TRANSLIT//IGNORE', 'UTF8', str) if options[:encoding]=='ASCII'
+    #      str.gsub(/[\s\302\240]+/mu," ").strip # el caracter UTF8 "\302\240" correspon al &nbsp; de HTML
+    #    end
 
-	# Intenta convertir +str+ a ASCII pur i dur
-	def asciify(str)
-		Iconv.conv('ASCII//TRANSLIT//IGNORE', 'UTF8', str)
-	end
+    # Intenta convertir +str+ a ASCII pur i dur
+    def asciify(str)
+      Iconv.conv('ASCII//TRANSLIT//IGNORE', 'UTF8', str)
+    end
 		
-	# Transforms a string +str+ to an acronym
-	def acronymize(str)
-    cleared_str = clear_string(str, :encoding => 'ASCII').gsub(/\W/," ")
+    # Transforms a string +str+ to an acronym
+    def acronymize(str)
+      cleared_str = clear_string(str, :encoding => 'ASCII').gsub(/\W/," ")
 
-    # opcio 1
-    unwanted_words_pttrn = %w[de en].map {|w| "\\b#{w}\\b"}.join("|")
-    res = cleared_str.gsub(/\b\w\b|#{unwanted_words_pttrn}/i," ")
-    res = res.split(" ").map {|s| s[0..0].upcase}.join
+      # opcio 1
+      unwanted_words_pttrn = %w[de en].map {|w| "\\b#{w}\\b"}.join("|")
+      res = cleared_str.gsub(/\b\w\b|#{unwanted_words_pttrn}/i," ")
+      res = res.split(" ").map {|s| s[0..0].upcase}.join
     
-    # opcio 2
-    if res == ""
-      res = cleared_str.split(" ").map {|s| s[0..0].upcase}.join
+      # opcio 2
+      if res == ""
+        res = cleared_str.split(" ").map {|s| s[0..0].upcase}.join
+      end
+      res
     end
-    res
-	end
 	
-	# Transforms +str+ to a shortened version:
-  # strips all non-alphanumeric chars, non-ascii and spaces and joins every word
-  # first two letters capitalized
-	def shorten(str)
-    cleared_str = clear_string(str, :encoding => 'ASCII').gsub(/\W/," ")
-    cleared_str.split(" ").map {|s| s[0..1].capitalize}.join
-	end
-	
-	# Extracts and returns the first provable DateTime from a string
-	def datify(str)
-    pttrn = /(\d+)[\/-](\d+)[\/-](\d+)(\W+(\d+)\:(\d+))?/
-    day, month, year, dummy, hour, min = str.match(pttrn).captures.map {|d| d ? d.to_i : 0 }
-    case year
-    when 0..69
-      year += 2000
-    when 70..99
-      year += 1900
+    # Transforms +str+ to a shortened version:
+    # strips all non-alphanumeric chars, non-ascii and spaces and joins every word
+    # first two letters capitalized
+    def shorten(str)
+      cleared_str = clear_string(str, :encoding => 'ASCII').gsub(/\W/," ")
+      cleared_str.split(" ").map {|s| s[0..1].capitalize}.join
     end
-    DateTime.civil year, month, day, hour, min
-	end
+	
+    # Extracts and returns the first provable DateTime from a string
+    def datify(str)
+      pttrn = /(\d+)[\/-](\d+)[\/-](\d+)(\W+(\d+)\:(\d+))?/
+      day, month, year, dummy, hour, min = str.match(pttrn).captures.map {|d| d ? d.to_i : 0 }
+      case year
+      when 0..69
+        year += 2000
+      when 70..99
+        year += 1900
+      end
+      DateTime.civil year, month, day, hour, min
+    end
 	
     protected
 
