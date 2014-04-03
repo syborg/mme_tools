@@ -59,6 +59,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<jeweler>, [">= 0"])
       s.add_development_dependency(%q<simplecov>, [">= 0"])
       s.add_development_dependency(%q<rr>, [">= 0"])
+      s.add_development_dependency(%q<minitest>, [">= 5.0.0"])
     else
       s.add_dependency(%q<unicode>, [">= 0"])
       s.add_dependency(%q<iconv>, [">= 0"])
@@ -66,6 +67,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<jeweler>, [">= 0"])
       s.add_dependency(%q<simplecov>, [">= 0"])
       s.add_dependency(%q<rr>, [">= 0"])
+      s.add_dependency(%q<minitest>, [">= 5.0.0"])
     end
   else
     s.add_dependency(%q<unicode>, [">= 0"])
@@ -74,6 +76,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<jeweler>, [">= 0"])
     s.add_dependency(%q<simplecov>, [">= 0"])
     s.add_dependency(%q<rr>, [">= 0"])
+    s.add_dependency(%q<minitest>, [">= 5.0.0"])
   end
 end
 
