@@ -1,11 +1,21 @@
 # some tiny demos
 # Marcel Massana 2-Sep-2011
 
-require 'rubygems'
-require 'mme_tools/enumerable'
+#require 'rubygems'
+require '../lib/mme_tools/enumerable'
 include MMETools::Enumerable
 
-# compose
+# redefinim each tambe als String com era abans (each ja no es a String des del 1.9)
+class String
+  def each(&block)
+    split($/).each(&block)
+  end
+end
+
+
+# COMPOSE
+puts "COMPOSE"
+
 en1= [1, 2, 3, 4]
 en2= ['a', 'b', 'c', 'd', 'e']
 en3= {:elem1 => "1", :elem2 => "2", :elem3 => "3"}
@@ -25,7 +35,9 @@ p Hash[*a2]
 p a3=compose(en2.dup, en3.dup).flatten
 # => ["a", :elem1, "1", "b", :elem2, "2", "c", :elem3, "3", "d", nil, "e", nil]
 
-# classify
+# CLASSIFY
+puts "CLASSIFY"
+
 a1=%w{tantmateix adhuc nogensmenys urgell pocassolta carrincló bajanada casundena Massalcoreig}
 a2 = <<EOF
 petita petunia pestilent
@@ -36,7 +48,9 @@ pericó
 EOF
 
 p classify(a1) {|el| el[0..0]}
+
 p classify(a1) {|el| el.length}
+
 p classify(a2) {|el| el.count(" ")+1} # tb: el.count(" ")+1, el.split.size, el.scan(" ").size+1
 
 # odd_values and even_values

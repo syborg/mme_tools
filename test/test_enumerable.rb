@@ -1,5 +1,5 @@
 require 'test/unit'
-require 'mme_tools'
+require '../lib/mme_tools'
 
 class TC_Enumerable < Test::Unit::TestCase
 

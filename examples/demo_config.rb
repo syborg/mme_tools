@@ -16,7 +16,7 @@ config1.contact = {:emails => ['jo@ana.com', 'j_ana@gmail.com']}
 config1.also = ['Hi There']
 
 
-#
+# saves config1 in config_file
 config1.dump config_file
 
 pp config1.contact.emails

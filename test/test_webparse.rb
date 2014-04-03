@@ -1,10 +1,10 @@
 # encoding: utf-8
 
 require 'test/unit'
-require 'mme_tools'
+require '../lib/mme_tools'
 require 'date'
 
-$KCODE = 'u'
+#$KCODE = 'u'
 
 class TC_Webparse < Test::Unit::TestCase
 

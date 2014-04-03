@@ -1,4 +1,4 @@
-require 'mme_tools'
+require '../lib/mme_tools'
 
 require 'rubygems'
 require 'test/unit'
@@ -7,7 +7,7 @@ require 'rr'
 
 class TC_Config < Test::Unit::TestCase
 
-  include RR::Adapters::TestUnit  # rr's suite mock/stub adapters
+  # include RR::Adapters::TestUnit  # rr's suite mock/stub adapters. Not necessary to include as of rr
 
   def setup
     @hsh = {

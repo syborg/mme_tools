@@ -1,7 +1,7 @@
 # NamedArgs
 # Marcel Massana 13-Sep-2011
 #
-# Extends Hash with methods based on ideas thrown in
+# Extends Hash with methods based on ideas from
 # http://saaientist.blogspot.com/2007/11/named-arguments-in-ruby.html
 # Also thanks to ActiveSupport from Rails
 

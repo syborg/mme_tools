@@ -3,7 +3,7 @@
 
 module MMETools
 
-  # Methods for Enumerables (Arrays and other each-equiped stuff)
+  # Methods for Enumerables (Arrays and other each-enabled stuff)
   module Enumerable
 
     extend self

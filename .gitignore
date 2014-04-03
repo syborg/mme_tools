@@ -52,5 +52,7 @@ nbproject
 
 # dirty tests
 examples/pr_*
-
 tmp/*
+
+# rubymine files
+.idea/*

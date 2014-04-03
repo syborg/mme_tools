@@ -1,10 +1,10 @@
---- 
-:also: 
-- Hi There
+---
+:name: Joana
 :surname: Peterson
 :any_name_u_want: anyname
-:name: Joana
-:contact: 
-  :EMAILS: 
+:contact:
+  :emails:
   - jo@ana.com
   - j_ana@gmail.com
+:also:
+- Hi There

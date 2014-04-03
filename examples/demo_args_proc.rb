@@ -2,7 +2,7 @@
 # Marcel Massana 13-Sep-2011
 
 #require 'rubygems'
-require 'mme_tools/args_proc'
+require '../lib/mme_tools/args_proc'
 
 class Dummy
 

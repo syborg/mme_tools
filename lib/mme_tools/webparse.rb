@@ -8,7 +8,7 @@ require 'unicode'
 require 'jcode' if RUBY_VERSION < '1.9'
 require 'date'
 
-$KCODE = "u"
+# $KCODE = "u"
 
 module MMETools
 
@@ -35,8 +35,8 @@ module MMETools
     #     "UTF8" torna una cadena UTF8
     # (based on an idea of Obie Fernandez http://www.jroller.com/obie/tags/unicode)
     def clear_string(str, opts={})
-      options = {:encoding=>'UTF8'}.merge opts
-      str=str.chars.map { |c| (c[0] <= 127) ? c : translation_hash[c] }.join if options[:encoding]=='ASCII'
+      options = {:encoding=>'UTF8'}.merge opts  # default option :encoding=>'UTF8'
+      str=str.chars.map { |c| (c.bytes[0] <= 127) ? c : translation_hash[c] }.join if options[:encoding]=='ASCII'
       str.gsub(/[\s\302\240]+/mu," ").strip # el caracter UTF8 "\302\240" correspon al &nbsp; de HTML
     end
     ## La versio original basada en Iconv no funciona en algunes circumstancies
