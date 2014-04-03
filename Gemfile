@@ -12,4 +12,5 @@ group :development do
   gem "jeweler"
   gem "simplecov"
   gem "rr"
+  gem 'minitest', ">=5.0.0"
 end

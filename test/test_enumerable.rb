@@ -1,7 +1,7 @@
-require 'test/unit'
+require 'minitest/autorun'
 require '../lib/mme_tools'
 
-class TC_Enumerable < Test::Unit::TestCase
+class TC_Enumerable < Minitest::Test
 
   def setup
     extend MMETools::Enumerable

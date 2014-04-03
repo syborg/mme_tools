@@ -1,11 +1,11 @@
 require '../lib/mme_tools'
 
 require 'rubygems'
-require 'test/unit'
+require 'minitest/autorun'
 require 'rr'
 
 
-class TC_Config < Test::Unit::TestCase
+class TC_Config < Minitest::Test
 
   # include RR::Adapters::TestUnit  # rr's suite mock/stub adapters. Not necessary to include as of rr
 
@@ -66,7 +66,7 @@ class TC_Config < Test::Unit::TestCase
   end
 
   def test_update_argument_error
-    assert_raise(ArgumentError) {@c.update!([1,2])}
+    assert_raises(ArgumentError) {@c.update!([1,2])}
   end
 
   def test_create_with_block
@@ -90,7 +90,7 @@ class TC_Config < Test::Unit::TestCase
   end
 
   def test_load_file_error
-    assert_raise(Errno::ENOENT) {@c.load("I_dont_exist.yml")}
+    assert_raises(Errno::ENOENT) {@c.load("I_dont_exist.yml")}
   end
 
 end

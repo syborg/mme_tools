@@ -1,12 +1,12 @@
 # encoding: utf-8
 
-require 'test/unit'
+require 'minitest/autorun'
 require '../lib/mme_tools'
 require 'date'
 
 #$KCODE = 'u'
 
-class TC_Webparse < Test::Unit::TestCase
+class TC_Webparse < Minitest::Test
 
   include MMETools::Webparse
 
